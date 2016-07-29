@@ -72,7 +72,7 @@ Part I
   group by "artist"
   order by "artist_occurrance" desc
   limit 1
-  8. SELECT artist,
+  8. sSELECT artist,
        count(artist) AS artist_count
        FROM tutorial.billboard_top_100_year_end
      WHERE year_rank = 1
@@ -100,4 +100,8 @@ Part I
   15. SELECT * FROM tutorial.billboard_top_100_year_end 
       WHERE artist ilike '%madonna%'
       ORDER BY year, year_rank;
-  16. 
+  16. SELECT  DISTINCT song_name, year, year_rank
+      FROM tutorial.billboard_top_100_year_end 
+      WHERE year >= 1990
+      AND year_rank <= 3
+      order by year_rank, year
