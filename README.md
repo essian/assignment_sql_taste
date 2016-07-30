@@ -105,3 +105,22 @@ Part I
       WHERE year >= 1990
       AND year_rank <= 3
       order by year_rank, year
+
+      Intermediate
+
+      1. select MIN(year_rank) 
+          from tutorial.billboard_top_100_year_end 
+          where artist ilike ('%phil collins%')
+      2. select AVG(year_rank)
+         from tutorial.billboard_top_100_year_end 
+         where artist ilike ('%michael jackson%')
+      3. select AVG(year_rank)
+         from tutorial.billboard_top_100_year_end 
+          where artist ilike ('%madonna%')
+          and year_rank <= 10
+      4. select artist, count(artist) as artist_count
+          from tutorial.billboard_top_100_year_end 
+          where year > 1985
+          group by artist
+          order by artist_count desc
+          limit 10
